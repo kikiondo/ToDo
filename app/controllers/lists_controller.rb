@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv {send_data @lists.to_csv, filename: "csv-#{Date.today}.csv" }
-      format.pdf { render template: 'todos/todos', pdf: 'pdf'}
+      format.pdf { render template: 'lists/lists', pdf: 'pdf'}
     end
   end
 
