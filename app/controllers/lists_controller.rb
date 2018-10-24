@@ -5,6 +5,12 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = List.all
+
+    respond_to do |format|
+      format.html
+      format.csv {send_data @lists.to_csv, filename: "csv-#{Date.today}.csv" }
+      format.pdf { render template: 'lists/lists', pdf: 'pdf'}
+    end
   end
 
   # GET /lists/1
