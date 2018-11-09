@@ -1,4 +1,4 @@
-class ExampleMailer < ApplicationMailer::Base
+class ExampleMailer < ApplicationMailer
   default from: "from@example.com"
 
   def sample_email(user)
