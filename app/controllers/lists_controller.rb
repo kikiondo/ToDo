@@ -3,7 +3,8 @@ class ListsController < ApplicationController
 
   # GET /lists
   # GET /lists.json
-  def index
+  def index 
+    MailerJob.perform_later
     @lists = List.all
 
     respond_to do |format|
